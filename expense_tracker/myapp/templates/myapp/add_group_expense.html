@@ -1,0 +1,12 @@
+
+{% load static %}  {# Load static files #}
+
+{% block content %}
+  <h2>Add Group Expense</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  {# This renders all form fields properly #}
+    <button type="submit">Add Expense</button>
+  </form>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+<!-- group_expense_list.html -->
+
+{% block content %}
+  <h2>Group Expenses</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Split Amount</th>
+        <th>Users</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for expense in expenses %}
+        <tr>
+          <td>{{ expense.name }}</td>
+          <td>{{ expense.amount }}</td>
+          <td>{{ expense.date }}</td>
+          <td>{{ expense.split_expense }}</td>
+          <td>
+            {% for user in expense.users.all %}
+              <span>{{ user.username }}</span>
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,11 @@
+
+
+{% block content %}
+  <h2>Categories</h2>
+  <ul>
+    {% for category in categories %}
+      <li>{{ category.name }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'category_add' %}">Add New Category</a>
+{% endblock %}
